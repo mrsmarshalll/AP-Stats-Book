@@ -1,0 +1,111 @@
+\subsection{Confidence Intervals for the Difference Between Two Proportions or Two Means}
+\label{Section: CI 2 proportions} \index{Confidence Intervals - Two Samples!Proportions or Means}
+
+
+
+
+Here we will consider the mechanics of finding a confidence interval for the difference between two population means or two proportions. Since you have already mastered the methods for calculating confidence intervals for one sample, the biggest difference here are the methods for calculating standard deviations with two samples. 
+
+\begin{itemize}
+\item {\bf Confidence Interval for the Difference of Two Means}\\
+If the population standard deviation ($\sigma$) is not known (the usual case), use:
+\hspace{.1in}
+\begin{center}
+\vspace{.1in}
+\framebox{\parbox{6in}{ 
+\begin{equation}
+(\bar{x}_1-\bar{x}_2)\pm t_{\frac{\alpha}{2}}\sqrt{\frac{s_1 ^2}{n_1}+\frac{s_2 ^2}{n_2}}\\
+\end{equation}}}\\
+\end{center}
+\vspace{.1in}
+Or, if the population standard deviation is known, use:
+\begin{center}
+\vspace{.1in}
+\framebox{\parbox{6in}{
+\begin{equation}
+(\bar{x}_1-\bar{x}_2)\pm z_{\frac{\alpha}{2}}\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}
+\label{eq:t CI two means}
+\end{equation}}}
+\end{center}
+\begin{itemize}
+\item $\ds \bar{x}_1$ = the mean from sample 1 and $\ds \bar{x} _2$= the mean from sample 2
+\item $\ds s_1^2$ = the variance from sample 1 and $\ds s_2^2$ = the variance from sample 2
+\item $\ds \sigma_1^2$= the variance of population 1 and $\ds s_2^2$ = the variance of population 2
+\item $\ds z_{\frac{\alpha}{2}}$ is the critical z value and $\ds t_{\frac{\alpha}{2}}$ is the critical t value.
+\item in the case of a t-interval, the degrees of freedom calculation is the same as for 2-sample hypothesis tests and should be calculated using software.
+\end{itemize}
+\begin{itemize}
+\item {\bf Example} Let's revisit the fascinating world of men's cholesterol levels. This time, let's ask the question, what is a reasonable estimate of the amount that cholesterol levels were lowered by the medication?  Let's find a 95\% confidence interval for the amount the cholesterol levels were lowered.  Since our data is not paired, we want to know what is an estimate of the average starting cholesterol level minus the average ending cholesterol level.
+
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c||c|c|c|}
+\hline
+& \multicolumn{10}{c||}{Cholesterol Levels in mg/dL} & mean & $s^2$ & $s$ \\ \hline
+No Drug ($x_1$)            & 237 & 289 & 257 & 228 & 303 & 275 & 262 & 304 & 244 & 233 & 263.2 & 811.1 & 28.5 \\ \hline
+Drug  ($x_2$)            & 194 & 240 & 230 & 186 & 265 & 222 & 242 & 281 & 240 & 212 & 231.2 & 864.0 & 29.4 \\ \hline
+\end{tabular}
+\end{center}
+\vspace{.2in}
+\begin{enumerate}
+\item Check that conditions are met:  The men were randomly chosen for the trial and represent less than 10\% of the population of men with high cholesterol.  Additionally, we assume that the cholesterol levels of men are approximately normally distributed.  The data is not paired, so we are considering this as two independent samples.
+\item Use software to calculate the degrees of freedom:  d.f. = 17.98.\\
+\item Using a t-table and 18 degrees of freedom, the critical t-value is 2.101.\\
+\item $\ds \sqrt{\frac{s_1 ^2}{n_1}+\frac{s_2 ^2}{n_2}} = \sqrt{\frac{28.5^2}{10}+\frac{29.4^2}{10}}=\sqrt{167.6}=12.94$
+\item Margin of Error:  $\ds E= t_{\frac{\alpha}{2}}\cdot \sqrt{\frac{s_1 ^2}{n_1}+\frac{s_2 ^2}{n_2}}=17.98 \cdot 12.94=27.19$
+\item Confidence Interval: \\
+The lower limit is $\ds (\bar{x}_1 - \bar{x}_2) - E = 32 - 27.19 = 4.81$\\
+The upper limit is $\ds (\bar{x}_1 - \bar{x}_2) + E = 32 + 27.19 = 59.19$\\
+The confidence interval is $\ds 4.81 < $ Mean reduction in cholesterol level $\ds < 59.19$
+\item Conclusion: I am 95\% confident that the true mean reduction in cholesterol level is between 4.81 and 59.19 points. 
+\end{enumerate}
+\item {\bf Your Turn:} Mandy just bought an orchard, and would like to know how  much bigger the apples from trees in field 1 are compared to apples from trees in field 2.  She takes a random sample of 15 apples from field  1 and 10 apples from field 2. Assume that the weights of the apples in the two fields are approximately normally distributed and find a 95\% confidence interval for the difference in weights between the two fields.  The mean weight of the 15 apples in field 1 is .55 pounds with a standard deviation of .15 pounds and the mean weight of the 10 apples from field 2 is .35 pounds with a standard deviation of .2 pounds.\\
+\end{itemize}
+\sol{ \parbox{6.5in}{
+\begin{enumerate}
+\item The conditions for inference are all met because the samples are random and independent and it is reasonable to assume that the weights of apples from both fields are approximately normally distributed.
+\item Using software, the degrees of freedom is 15.6  
+\item $\ds t_{\frac{\alpha}{2}}=2.120$ from the t-table.
+\item $\ds \sqrt{\frac{s_1 ^2}{n_1}+\frac{s_2 ^2}{n_2}}= \sqrt{\frac{.15^2}{15}+\frac{.2^2}{10}=.074}$ So $\ds E=(2.12)(.074)=0.157$ 
+\item Lower limit: $\ds (.55-.35) - .157 = 0.043$  Upper limit:  $\ds (.55 - .35) + .157 = .357$. 
+\item Therefore, Mandy can be 95\% confident that the true mean difference between the weights of the apples in field 1 and field 2 is between .043 and .357 pounds.
+\end{enumerate}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\item {\bf Confidence Intervals for the Difference Between Two Proportions}\\
+\end{itemize}
+\framebox{\parbox{7in}{
+\begin{center}
+\begin{equation}
+(\hat{p}_1 - \hat{p}_2 )\pm z_{\frac{\alpha}{2}}  \sqrt{\frac{\hat{p}_1\hat{q}_1}{n_1}+\frac{\hat{p}_2\hat{p}_2}{n_2}}
+\end{equation}
+\end{center}}}
+\begin{enumerate}
+\item $\ds \hat{p}_1$ is the proportion of successes in sample 1 and $\ds \hat{p}_2$ is the proportion of successes in sample 2.
+\item $\ds\hat{q}_1 = 1-\hat{p}_1$ and $\ds \hat{q}_2 = 1-\hat{p}_2$
+\item $\ds n_1$ = the size of sample 1, and $\ds n_2$ = the size of sample 2.
+\end{enumerate}
+\begin{itemize}
+\item {\bf Example} Researchers compare the two weight-loss programs, "Waist Watchers" and "Loss Leaders."  They found that 38 of the 120 subjects who used "Waist Watchers" kept the weight off for 6 months and 45 of 180 subjects who used "Loss Leaders" kept the weight off for 6 months.  Find a 95\% confidence interval for the difference in the proportion of subjects who keep the weight off for 6 months.
+\begin{enumerate}
+\item The conditions for inference are met because the subjects were randomly chosen, the two samples are independent and there are more than 5 successes and 5 failures in each sample, ($\ds n_1\hat{p}_1=38$ and $\ds n_1\hat{q}_1=82$ and $\ds n_2\hat{p}_2=45$ and $\ds n_2 \hat{q}_2=135$)
+\item $\ds \hat{p}_1=38/120 = .3166$
+\item $\ds \hat{p}_2=45/180 = .25$
+\item $\ds z_{\frac{\alpha}{2}}=1.96$
+\item $\ds S.E.=\sqrt{\frac{\hat{p}_1\hat{q}_1}{n_1}+\frac{\hat{p}_2\hat{p}_2}{n_2}}=\sqrt{\frac{(.3166)(.6834)}{120}+\frac{(.25)(.75)}{180}}=\sqrt{.00285}=.0534$
+\item Lower Limit:  $\ds (.3166-.25) - 1.96(.0534)=-0.0380$
+\item Upper Limit: $\ds (.3199-.25) + 1.96(.0534)=0.171$
+\item Confidence Interval:  $\ds -0.0380 <$ Mean difference between the two weight loss programs $\ds
+ <0.17$
+\item We are 95\% certain that proportion of people who are able to keep weight off after using "Waist Watchers" is between -.038\% and 0.17\% higher than for "Loss Leaders."  Notice that because this interval includes zero, it is possible that the true proportion of people who keep the weight off for 6 months may actually be higher for "Loss Leaders." 
+\end{enumerate}
+\item {\bf Your Turn:} Two years ago, I randomly surveyed 40 of my friends about their vacation plans for the year.  At that time, 30 of them were planning on taking at least a two-week vacation to a destination more than 100 miles from their home.  This year, I asked 38 of my friends the same question and 35 had plans for such a trip. Find a 95\% confidence interval estimate for the difference in the proportion of people going on vacation two years ago compared to this year.  Does this provide evidence that more of my friends are going on vacation now compared to two years ago? Does this provide evidence that more Americans are going on vacation this year compared to two years ago?
+\end{itemize}
+\sol{\parbox{6.5in}{
+\begin{enumerate}
+\item The conditions for inference are really not met because even though this is a random sample, it is likely that the two samples from the two years are not independent because some subset of my friends probably  know each other, and if one friend vacationed two years ago, they may have influenced whether another friend went on vacation this year. Also, it is not clear if the samples are less than 10\% of my friends circle.  We will proceed with the mechanics of doing the confidence interval anyways.
+\item $\ds \hat{p}_1=\frac{30}{40}=.75$ and $\ds \hat{p}_2=\frac{35}{38}=.921$
+\item $\ds E=z_{\frac{\alpha}{2}}\sqrt{\frac{\hat{p}_1\hat{q}_1}{n_1}+\frac{\hat{p}_2\hat{q}_2}{n_2}}=.1592$
+\item lower limit: $\ds (.9210-.75)-.1592=.0118$
+\item upper limit: $\ds (.9210-.75)+.1592=.3302$
+\item We are 95\% confident that between 1.18\% and 33.02\% more of my friends are going on vacation this year than did two years ago.  Because the interval does not include zero, this does provide evidence that more friends are going on vacation now than two years ago.  Because this was a sample of my friends, it is not indicative of Americans in general.
+\end{enumerate}}}
